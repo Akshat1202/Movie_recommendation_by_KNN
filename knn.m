@@ -1,7 +1,7 @@
 function y = knn(Xtrain,ytrain,k,Xtest)
 %%% Xtest belongs to new data points for which we are trying to predict the
 %%% output class
-[m,n]=size(Xtest)
+[m,n]=size(Xtest);
 for i=1:1:m
     nx=Xtest(i,:);%%%the one row value will be stored in nx;(new data point)
  
@@ -13,9 +13,9 @@ for i=1:1:m
     %step-3: Arranging the euclidian data in descending order
     %sortrows will sort the first coulmn only in row wise
     for p=1:1:k %%%%step-4: Storing the value of output till k neighbour
-        eds(i,p)=ed_sort(p,2)
+        eds(i,p)=ed_sort(p,2);
     end
      %eds matrix will store the nearest movies from the training set close
      %to the considered test movie
-     y=eds
+     y=eds;
 end

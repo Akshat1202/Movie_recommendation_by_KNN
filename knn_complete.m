@@ -4,16 +4,16 @@ close all
 
 %Movie.csv contains all the data and ratings related to a particular movie.
 
-d=importdata('movie.csv')
+d=importdata('movie.csv');
 %%% use this command if the file contain text data
 %%%%convert the text data into numbers.
- [m,n]=size(d.data)
+ [m,n]=size(d.data);
 %check the d.data in command window to understand the values in it
- ytrain=1:1:m 
+ ytrain=1:1:m ;
  %preparing the feature matrix, removing name and the serial number from
  %the given file
- X=[d.data(:,1:end)]  %%% Final feature matrix with all numerical data
- X=featureNormalize(X)%%% Normalising feature
+ X=[d.data(:,1:end)];  %%% Final feature matrix with all numerical data
+ X=featureNormalize(X);%%% Normalising feature
  
  
 
@@ -27,8 +27,8 @@ d=importdata('movie.csv')
   
   %%%consider i have watched star wars movie (s.NO:49) in the list and plus
   %%%one is added to take care title row at the first
-  s=49+1
-  Xtest=X(s,:)
+  s=input("Enter the movie number");
+  Xtest=X(s,:);
    ypred=knn(Xtrain,ytrain,k,Xtest);%%%X belongs to new data set 
 
    %%%Movie you have seen
