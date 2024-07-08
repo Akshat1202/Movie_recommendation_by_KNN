@@ -19,7 +19,7 @@ d=importdata('movie.csv');
 
 %  %%%%%% KNN algorithm
 % % %step-1:Input no of k-neighbors
-  k=10;
+  
 %  %step-2: calculate euclidean distance for new data set (consider test data set as new points)
 % % %i=1;
   Xtrain=X;%%%Training data which has to be classified
@@ -27,7 +27,8 @@ d=importdata('movie.csv');
   
   %%%consider i have watched star wars movie (s.NO:49) in the list and plus
   %%%one is added to take care title row at the first
-  s=input("Enter the movie number");
+  s=input("Enter the movie number : ");
+  k=input("Enter the number of recommendations you want to see  :  ");
   Xtest=X(s,:);
    ypred=knn(Xtrain,ytrain,k,Xtest);%%%X belongs to new data set 
 
